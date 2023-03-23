@@ -11,12 +11,6 @@ code & to hopefully learn some new concepts along the way.
 An implementation of the set algorithms present in the STL for 
 `std::unordered_set`.
 
-Currently supports
-- set\_union
-- set\_intersection
-- set\_difference
-- set\_symmetric\_difference
-
 ## Future Work
 
 - Implementing an iterator for a map, where the value type of said map is some 
