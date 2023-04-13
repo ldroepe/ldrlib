@@ -18,18 +18,34 @@ enable_testing()
 set(SET_HEADERS include/sets/sets.h)
 set(SET_TEST_SOURCES test/sets/sets_base.cpp)
 
+set(UTILS_HEADERS include/utils/finds.h)
+set(UTILS_TEST_SOURCES test/utils/test_finds.cpp)
+
 add_executable(
     sets_test
     ${SET_HEADERS}
     ${SET_TEST_SOURCES}
 )
 
+add_executable(
+    utils_test
+    ${UTILS_HEADERS}
+    ${UTILS_TEST_SOURCES}
+)
+
 target_include_directories(sets_test PRIVATE include/sets/)
+target_include_directories(utils_test PRIVATE include/utils/)
 
 target_link_libraries(
     sets_test
     GTest::gtest_main
 )
 
+target_link_libraries(
+    utils_test
+    GTest::gtest_main
+)
+
 include(GoogleTest)
 gtest_discover_tests(sets_test)
+gtest_discover_tests(utils_test)
